@@ -46,7 +46,7 @@ def slides():
   payload = response.payload.data.decode('UTF-8')
   if payload == password:
     method_to_video()
-    response = send_file('video.mp4', as_attachment=True)
+    response = send_file('video.mp4', as_attachment=True, cache_timeout=1)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
   else:
